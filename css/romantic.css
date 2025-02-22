@@ -1,0 +1,146 @@
+:root {
+    --main-red: #FF1D25;
+    --love-pink: #FF69B4;
+    --sp-black: #000;
+}
+
+body {
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+    font-family: 'Love Ya Like A Sister', cursive;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    overflow: hidden;
+}
+
+.hearts {
+    position: fixed;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.character {
+    position: fixed;
+    bottom: -30px;
+    height: 500px;
+    opacity: 0.7;
+    animation: float 4s ease-in-out infinite;
+}
+
+.left { left: 5%; }
+.right { right: 5%; }
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    width: 95%;
+    max-width: 600px; /* Reducimos el máximo */
+    padding: 1.5rem;
+    margin: 1rem auto;
+    border-radius: 15px;
+    box-shadow: 0 0 30px var(--love-pink);
+    max-width: 800px;
+    z-index: 2;
+    position: relative;
+    transform: scale(0.9); /* Escalado inicial para mejor ajuste */
+    transform-origin: center;
+}
+
+/* Añade estas media queries */
+@media (min-width: 768px) {
+    .container {
+        transform: scale(1);
+        width: 90%;
+        max-width: 700px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 800px;
+    }
+}
+
+h1 {
+    font-family: 'Permanent Marker', cursive;
+    color: var(--main-red);
+    text-align: center;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px var(--sp-black);
+    transform: rotate(-3deg);
+    margin: 1rem 0;
+}
+
+.love-letter {
+    background: #fff9f9;
+    padding: 1.5rem;
+    border: 3px dashed var(--love-pink);
+    margin: 1rem 0;
+    line-height: 1.6;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.gallery img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border: 2px solid var(--main-red);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+.music-btn {
+    background: var(--main-red);
+    color: white;
+    padding: 10px 25px;
+    border: 2px solid var(--sp-black);
+    border-radius: 20px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.music-btn:hover {
+    background: var(--love-pink);
+    transform: translateY(-3px);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Agrega esto al final del archivo */
+.love-letter {
+    text-align: center;
+    font-size: 1.2em;
+    margin: 20px 0;
+  }
+  
+  .love-letter p {
+    margin: 15px 0;
+    line-height: 1.5;
+  }
+  
+  .gallery {
+    margin-bottom: 40px; /* Espacio extra antes del botón */
+  }
+  
+  .music-btn {
+    position: relative;
+    z-index: 3;
+    margin: 20px auto;
+    display: block;
+    width: fit-content;
+  }
